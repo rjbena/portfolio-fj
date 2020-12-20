@@ -9,6 +9,7 @@ const data = {
       description: "Doing something, programing....",
       startDate: "01/01/2014",
       endDate: "01/01/2016",
+      userId: "google-oauth2|104410789658557438999",
     },
     {
       title: "Job in Siemens",
@@ -19,6 +20,7 @@ const data = {
       description: "Responsoble for parsing framework for JSON medical data.",
       startDate: "01/01/2011",
       endDate: "01/01/2013",
+      userId: "google-oauth2|104410789658557438999",
     },
     {
       title: "Work in USA",
@@ -29,6 +31,7 @@ const data = {
       description: "So much responsibility....Overloaaaaaad",
       startDate: "01/01/2010",
       endDate: "01/01/2011",
+      userId: "google-oauth2|104410789658557438999",
     },
   ],
 };

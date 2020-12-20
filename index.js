@@ -7,7 +7,7 @@ import connectDB from "./db/index.js";
 
 dotenv.config();
 const app = express();
-
+app.use(express.json());
 async function runServer() {
   await connectDB();
   const PORT = process.env.PORT || 3001;
