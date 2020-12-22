@@ -1,5 +1,7 @@
 import express from "express";
 
+import { checkJwt } from "../middleware/auth.js";
+
 import {
   getPortfolios,
   getPortfolioById,
@@ -9,7 +11,7 @@ import {
 const router = express.Router();
 
 router.get("/", getPortfolios);
-router.post("/", createPortfolio);
+router.post("/", checkJwt, createPortfolio);
 
 router.get("/:id", getPortfolioById);
 export default router;
