@@ -47,3 +47,12 @@ export const updatePortfolio = async (req, res) => {
     return res.status(422).send(error.message);
   }
 };
+
+export const deletePortfolio = async (req, res) => {
+  try {
+    await Portfolio.findByIdAndDelete(req.params.id);
+    res.json("Portfolio successfully deleted");
+  } catch (error) {
+    return res.status(422).send(error.message);
+  }
+};
