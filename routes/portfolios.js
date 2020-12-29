@@ -1,6 +1,6 @@
 import express from "express";
 
-import { checkJwt } from "../middleware/auth.js";
+import { checkJwt, checkRole } from "../middleware/auth.js";
 
 import {
   getPortfolios,
@@ -17,5 +17,5 @@ router.post("/", checkJwt, createPortfolio);
 
 router.get("/:id", getPortfolioById);
 router.patch("/:id", checkJwt, updatePortfolio);
-router.delete("/:id", checkJwt, deletePortfolio);
+router.delete("/:id", checkJwt, checkRole("admin"), deletePortfolio);
 export default router;
