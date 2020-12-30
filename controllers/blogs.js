@@ -33,7 +33,7 @@ export const getBlogBySlug = async (req, res) => {
 
 export const createBlog = async (req, res) => {
   const newBlog = req.body;
-  newBlog.userId = "google-oauth2|104410789658557438999";
+  newBlog.userId = req.user.sub;
   const blog = new Blog(newBlog);
   try {
     const createBlog = await blog.save();

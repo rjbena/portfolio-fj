@@ -11,7 +11,7 @@ import {
 const router = express.Router();
 
 router.get("/", getBlogs);
-router.post("/", createBlog);
+router.post("/", checkJwt, checkRole("admin"), createBlog);
 
 router.get("/:id", getBlogById);
 
