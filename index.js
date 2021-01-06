@@ -14,6 +14,11 @@ async function runServer() {
   const PORT = process.env.PORT || 3001;
   app.use("/api/v1/portfolios", portfoliosRoutes);
   app.use("/api/v1/blogs", blogRoutes);
+
+  app.get("", (req, res) => {
+    res.sendFile("index.html", { root: __dirname });
+  });
+
   app.listen(PORT, (error) => {
     if (error) console.error(error);
     console.log(`Server running on port: ${PORT}`);
