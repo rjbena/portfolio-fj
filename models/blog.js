@@ -7,7 +7,11 @@ const blogSchema = new mongoose.Schema(
     subTitle: { type: String, required: true },
     content: { type: String, required: true },
     userId: { type: String, required: true },
-    status: { type: String, default: "draft", enum: ["draft", "published"] },
+    status: {
+      type: String,
+      default: "draft",
+      enum: ["draft", "published", "deleted"],
+    },
   },
   {
     timestamps: true,
